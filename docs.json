@@ -1,0 +1,62 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Cloudy",
+  "theme": "almond",
+  "logo": {
+    "light": "https://media.brand.dev/c511f34f-7ab7-494a-899d-cd14df052577.png",
+    "dark": "https://media.brand.dev/c511f34f-7ab7-494a-899d-cd14df052577.png"
+  },
+  "favicon": "https://media.brand.dev/c9daa784-7ba5-4aa0-a9ec-3798898d3e39.jpg",
+  "colors": {
+    "primary": "#672ead",
+    "light": "#ac8ccc",
+    "dark": "#d2c1e0"
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/memesdoesthings/CloudyVer2"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "deployment"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/browsing",
+              "features/games-apps",
+              "features/tab-system",
+              "features/cloaking"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/settings",
+              "configuration/themes",
+              "configuration/password-protection"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "help/troubleshooting",
+              "help/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

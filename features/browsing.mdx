@@ -1,0 +1,67 @@
+---
+title: "Browse Any Website Through the Cloudy Proxy"
+sidebarTitle: "Web Browsing"
+description: "Use Cloudy's built-in proxy to access any website from your browser. Supports Scramjet, Ultraviolet, and Dynamic proxy engines."
+---
+
+Cloudy proxies your web traffic through its own server, letting you reach websites that would otherwise be blocked on your network. Just type a URL or search term into the home page search bar and Cloudy handles the rest — no extensions, no extra installs required. The default proxy engine is **Scramjet**, which works out of the box for most sites.
+
+## How to Browse
+
+<Steps>
+  <Step title="Open the Cloudy home page">
+    Navigate to the root of your Cloudy instance (e.g. `https://your-cloudy-instance.com/`). You'll see the search bar in the centre of the page.
+  </Step>
+  <Step title="Enter a URL or search term">
+    Type a full URL (e.g. `https://example.com`) or a plain search term into the bar and press **Enter**. Cloudy will route URLs directly through the proxy engine, and search terms through your configured search engine.
+  </Step>
+  <Step title="Browse freely">
+    The proxied page loads in your current tab. You can follow links, log in to sites, and generally browse as normal.
+  </Step>
+</Steps>
+
+## Choosing a Proxy Engine
+
+Cloudy supports three proxy engines. You can switch between them at any time from Settings without losing your session.
+
+| Engine | Notes |
+|---|---|
+| **Scramjet** (default) | Fastest and most compatible engine. Recommended for everyday browsing. |
+| **Ultraviolet** (legacy) | An older but stable alternative. Useful if a specific site behaves better with it. |
+| **Dynamic** | An alternative routing mode. Note that Dynamic **does not work** inside an About:Blank popup window. |
+
+**To switch engines:**
+
+1. Go to **Settings** (`/c`).
+2. Find the **Choose your Proxy** card.
+3. Select your preferred engine from the dropdown.
+4. Your choice is saved automatically to your browser's local storage.
+
+## Search Engine
+
+When you type a plain search term (rather than a URL), Cloudy routes it through your configured search engine. The default is **Brave Search**.
+
+**Available search engines:**
+
+- Brave *(default)*
+- Google
+- Bing
+- Qwant
+- Startpage
+- SearchEncrypt
+- Ecosia
+
+**To change your search engine:**
+
+1. Go to **Settings** (`/c`).
+2. Find the **Search Engine** card.
+3. Select an engine from the dropdown — your choice saves immediately.
+4. To use a custom engine not in the list, paste its search URL (including the `?q=` parameter) into the text field below the dropdown and click **Save**.
+
+```text Example custom engine URL
+https://duckduckgo.com/?q=
+```
+
+<Tip>
+  For the best browsing experience, open sites inside the **Tab System** (`/d`). It gives you a full browser-like interface with navigation controls, multiple tabs, and DevTools — all without leaving Cloudy.
+</Tip>

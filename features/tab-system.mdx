@@ -1,0 +1,55 @@
+---
+title: "Use the Built-in Multi-Tab Browser in Cloudy"
+sidebarTitle: "Tab System"
+description: "Cloudy's built-in tab system gives you a full browser-like experience with navigation controls, multiple tabs, Inspect Element, and fullscreen mode."
+---
+
+The Tab System at `/d` is Cloudy's full browser interface. From a single page you can navigate multiple proxied sites in separate tabs, move back and forward through your history, reload pages, open the browser DevTools, and go fullscreen — everything you'd expect from a real browser, all running through the Cloudy proxy.
+
+## Opening the Tab System
+
+Navigate to `/d` on your Cloudy instance to launch the tab system. It opens with a single default tab pointed at the Cloudy home page, ready for you to start browsing.
+
+## Navigation Controls
+
+The toolbar at the top of the Tab System gives you full control over the active tab. Every button is described in the table below, in left-to-right order.
+
+| Control | Icon | What it does |
+|---|---|---|
+| **Home** | 🏠 House | Returns to the Cloudy home page in the current tab |
+| **Back** | ← Left arrow | Navigates to the previous page in the tab's history |
+| **Forward** | → Right arrow | Navigates forward in the tab's history |
+| **Reload** | ↻ Rotate right | Reloads the current page |
+| **Address bar** | — | Type a URL or search term and press **Enter** to navigate |
+| **Fullscreen** | ⛶ Expand | Enters fullscreen mode for the current tab's content |
+| **Window Popout** | ↗ Arrow | Pops the current tab out into a separate window |
+| **Inspect** | `</>` Code | Toggles the built-in DevTools / Inspect panel |
+| **Tab sidebar toggle** | 🔍− Magnifying glass | Shows or hides the tab list in the right sidebar |
+
+## Managing Tabs
+
+<Steps>
+  <Step title="Open a new tab">
+    Click the **+** (plus) button at the top of the right sidebar. A new tab appears in the tab list and becomes the active tab.
+  </Step>
+  <Step title="Switch between tabs">
+    Click any tab in the right sidebar to make it active. Each tab maintains its own independent navigation history and loaded page.
+  </Step>
+  <Step title="Close a tab">
+    Click the **×** on a tab in the sidebar to close it. Closing all tabs returns you to a fresh single-tab state.
+  </Step>
+</Steps>
+
+<Note>
+  Each tab runs in isolation. Content loaded in one tab has no access to the pages or state of another tab.
+</Note>
+
+## Inspect Element
+
+The Tab System has a built-in developer tools panel — no separate extension required.
+
+To toggle it, click the **`</>`** (code) icon on the right side of the toolbar. The DevTools panel will slide open at the bottom of the active tab's content area, giving you access to the Elements, Console, and other inspector tools for the proxied page.
+
+<Tip>
+  Using the Tab System alongside **About:Blank cloaking** is a powerful combination. When About:Blank is active, your browser's URL bar shows `about:blank` while the Tab System's address bar shows the real proxied URL — keeping your activity out of sight. See the [Cloaking](/features/cloaking) guide to set it up.
+</Tip>

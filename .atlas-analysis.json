@@ -1,0 +1,75 @@
+{
+  "projectType": "saas",
+  "projectName": "Cloudy",
+  "projectDescription": "Cloudy is a web-based proxy platform that lets users browse the web freely, play games, and run apps — all from within a clean, customizable browser-like interface.",
+  "theme": "almond",
+  "primaryColor": "#672ead",
+  "lightColor": "#ac8ccc",
+  "darkColor": "#d2c1e0",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "deployment"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/browsing",
+              "features/games-apps",
+              "features/tab-system",
+              "features/cloaking"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/settings",
+              "configuration/themes",
+              "configuration/password-protection"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "help/troubleshooting",
+              "help/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Web proxy supporting Scramjet, Ultraviolet, and Dynamic transport modes",
+    "About:Blank cloaking to hide the site in a blank page",
+    "Tab Cloaker — disguise the tab title and favicon as common school tools",
+    "Built-in multi-tab browser system with navigation controls and inspect element",
+    "Wide library of games and apps accessible from within the interface",
+    "Now.gg and Geforce NOW cloud gaming support",
+    "Multiple visual themes including Catppuccin flavors and custom color schemes",
+    "Customizable search engine (Brave, Google, Bing, and more)",
+    "Panic Key — instantly redirect to another site with a single keypress",
+    "Optional password protection for self-hosted instances",
+    "Save data export and import for seamless site migration",
+    "Custom background image support"
+  ],
+  "publicApiSurface": [
+    "GET / — Home page (search / proxy entry point)",
+    "GET /b — Apps page",
+    "GET /a — Games page",
+    "GET /c — Settings page",
+    "GET /d — Tab system page",
+    "GET /e/:source/* — Proxied external asset endpoint (cached 30 days)",
+    "GET /ca/* — Bare server routing (WebSocket/HTTP proxy transport)",
+    "GET /bm/* — BareMux transport static assets",
+    "GET /ep/* — Epoxy transport static assets"
+  ]
+}

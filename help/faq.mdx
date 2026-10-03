@@ -1,0 +1,76 @@
+---
+title: "Frequently Asked Questions About Cloudy"
+sidebarTitle: "FAQ"
+description: "Answers to the most common questions about Cloudy — including what it is, how it works, deployment options, privacy, and game requests."
+---
+
+Here are answers to the most frequently asked questions about Cloudy. If you don't find what you're looking for, join the Discord community or check the troubleshooting guide.
+
+<Accordion title="What is Cloudy?">
+  Cloudy is a web proxy that lets you access websites, play games, and run apps through a server-side proxy. It works in any modern browser and is designed for use on restricted networks where direct access to certain sites may be blocked.
+</Accordion>
+
+<Accordion title="Is Cloudy free to use?">
+  Yes. Cloudy is open source and completely free to self-host. No account, subscription, or payment of any kind is required.
+</Accordion>
+
+<Accordion title="Where can I deploy Cloudy?">
+  Cloudy requires a **Node.js server** to run. You can deploy it on any VPS or cloud provider that supports Node.js (such as DigitalOcean, Render, Heroku, or Railway), or use **GitHub Codespaces** for a free, browser-based quick start.
+
+  <Warning>
+    Cloudy cannot be deployed to static hosting services like **Netlify**, **Cloudflare Pages**, or **GitHub Pages**. These platforms do not support server-side Node.js processes.
+  </Warning>
+</Accordion>
+
+<Accordion title="Does Cloudy store my browsing history?">
+  No. Cloudy does not log or store your browsing history on the server. All settings and preferences are saved exclusively **in your browser** and are never transmitted to any external server.
+</Accordion>
+
+<Accordion title="What proxy engines does Cloudy support?">
+  Cloudy supports three proxy engines that you can switch between in **Settings → Choose your Proxy**:
+
+  - **Scramjet** (default) — the fastest and most broadly compatible engine; recommended for most users.
+  - **Ultraviolet** — the legacy engine; a stable fallback for sites that Scramjet doesn't handle well.
+  - **Dynamic** — an alternative mode for general browsing; note that it does not work inside an About:Blank popup.
+</Accordion>
+
+<Accordion title="Can I request a game or app to be added?">
+  Yes! Open a new issue using the **Game Request** template on GitHub:
+
+  [Submit a Game Request →](https://github.com/memesdoesthings/CloudyVer2/issues)
+
+  Provide as much detail as possible about the game or app you'd like to see added.
+</Accordion>
+
+<Accordion title="What is About:Blank cloaking?">
+  About:Blank cloaking opens Cloudy inside a browser popup whose address bar displays `about:blank` instead of your actual Cloudy URL. This makes it harder for network monitors to identify the site you're visiting at a glance.
+
+  Enable it in **Settings → About:Blank**, then click **Open Popup** to launch the cloaked window.
+
+  <Note>
+    The Dynamic proxy engine does not work inside an About:Blank popup. Use Scramjet or Ultraviolet if you need this feature.
+  </Note>
+</Accordion>
+
+<Accordion title="What is Tab Cloaking?">
+  Tab Cloaking changes the browser tab's **title** and **favicon** to resemble a common school or workplace tool — for example, Google Classroom or Canvas — so the tab blends in on a shared or monitored screen.
+
+  Configure it in **Settings → Tab Cloaker**.
+</Accordion>
+
+<Accordion title="What is the Panic Key?">
+  The Panic Key is a configurable keyboard shortcut that instantly redirects your browser tab to a safe URL of your choice (such as Google Classroom or a blank search page). It's useful for quickly switching away from Cloudy when needed.
+
+  Set your Panic Key shortcut and redirect URL in **Settings → Set Panic Key**.
+</Accordion>
+
+<Accordion title="What happened to Replit deployment?">
+  As of **January 1, 2024**, Replit is no longer free for the type of hosting Cloudy requires. If you were previously using Replit, switch to **GitHub Codespaces** as a free alternative — it offers a similar browser-based cloud environment with no local setup required.
+</Accordion>
+
+<Accordion title="Where can I get help?">
+  You have two main options for support:
+
+  - **Discord** — Join the community at [discord.gg/interstellar](https://discord.gg/interstellar) for real-time help from other users and contributors.
+  - **Email** — Reach the Cloudy team directly at [hello@gointerstellar.app](mailto:hello@gointerstellar.app).
+</Accordion>

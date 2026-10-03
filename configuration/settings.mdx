@@ -1,0 +1,118 @@
+---
+title: "Cloudy Settings: Proxy, Themes, Cloaking, and More"
+sidebarTitle: "Settings"
+description: "Adjust your Cloudy proxy engine, search engine, tab cloaking, background image, visual theme, and save data — all from the /c settings page."
+---
+
+All Cloudy settings are accessible at `/c` and stored in your browser's `localStorage` — no account or sign-in is required. Every change you make takes effect immediately without a page reload.
+
+## Accessing Settings
+
+Navigate to `/c` in your browser, or click the **Settings** icon in the Cloudy navigation bar. You'll see a grid of setting cards, each controlling a different aspect of the experience.
+
+## Settings Cards
+
+### About:Blank
+
+The About:Blank card lets you cloak Cloudy inside an `about:blank` popup, making it harder for network monitors to identify what tab you have open.
+
+- **Toggle** — flip the switch to enable or disable About:Blank cloaking.
+- **Open Popup** — click the **Open Popup** button to manually launch the `about:blank` window right now.
+- **On Startup** — when the toggle is on, the cloaking popup opens automatically every time you load Cloudy.
+
+<Note>
+  Firefox does not support the About:Blank popup. The Open Popup button has no effect in Firefox.
+</Note>
+
+### Panic Key
+
+The Panic Key lets you redirect your current tab to a safe-looking page with a single keystroke — useful when you need to switch away quickly.
+
+- **Panic Keys** — type one or more keyboard keys in the input field. Separate multiple keys with a comma (for example, `A,B,C` means press A then B then C).
+- **Panic Link** — enter the URL Cloudy will navigate to when the panic key sequence is triggered. Defaults to `https://classroom.google.com/`.
+- Click **Save** to store your settings.
+
+### Tab Cloaker
+
+The Tab Cloaker changes the browser tab's title and favicon so the tab looks like a school or productivity tool at a glance.
+
+- Use the **dropdown** to pick from a wide list of presets, including Google Classroom, Canvas, Clever, Khan Academy, Wikipedia, and many more.
+- Click **Save** to apply your selection.
+- Click **Reset Cloak** to restore the default Cloudy tab title and favicon.
+
+### Background Image
+
+You can replace Cloudy's default background with any image hosted on the web.
+
+1. Paste a direct image URL into the **Enter image URL** field.
+2. Click **Save** to apply the background.
+3. Click **Reset** to go back to the default background.
+
+<Tip>
+  Use a direct link that ends in a file extension like `.jpg`, `.png`, `.gif`, or `.webp` for best results. Links to image-hosting pages (rather than the image file itself) may not display correctly.
+</Tip>
+
+### Search Engine
+
+Choose which search engine Cloudy uses when you type a search query into the address bar.
+
+| Option | Engine |
+|---|---|
+| **Brave** (default) | `https://search.brave.com` |
+| **Google** | `https://www.google.com` |
+| **Bing** | `https://www.bing.com` |
+| **Qwant** | `https://www.qwant.com` |
+| **Startpage** | `https://www.startpage.com` |
+| **SearchEncrypt** | `https://www.searchencrypt.com` |
+| **Ecosia** | `https://www.ecosia.org` |
+
+To use a search engine not in the list, type its search URL (including the query placeholder) into the **Change Search Engine** text field and click **Save**.
+
+### Proxy Engine
+
+Select the underlying proxy technology Cloudy uses to fetch pages on your behalf.
+
+| Option | Notes |
+|---|---|
+| **Scramjet** (default) | The current recommended engine — fastest and most compatible. |
+| **Ultraviolet** (legacy) | An older engine kept for compatibility with sites that Scramjet may handle differently. |
+| **Dynamic** | An alternative engine; note that it does not work when About:Blank cloaking is active. |
+
+Your selection takes effect on the next page you load through Cloudy.
+
+### Particles
+
+Toggle the animated particle background that was present in earlier versions of Cloudy. Flip the switch on to enable the effect, or off to disable it. The preference is saved immediately.
+
+### Themes
+
+Pick a visual theme to change Cloudy's color palette. Select a theme from the dropdown — it is applied instantly and saved to your browser. See the [Themes](/configuration/themes) page for a full description of every available theme.
+
+---
+
+## Save Data Export & Import
+
+The **Save Data Management** card lets you back up all your settings to a file and restore them later. This is especially helpful when the Cloudy URL changes and you want to carry your preferences over to the new address.
+
+<Steps>
+  <Step title="Export your settings">
+    Click **Export Save**. Your browser downloads a file named `save_data.json` containing all `localStorage` keys and cookie values.
+  </Step>
+  <Step title="Import your settings">
+    Click **Import Save**, then select a `save_data.json` file you exported previously. Cloudy reads the file and restores every setting immediately.
+  </Step>
+</Steps>
+
+<Warning>
+  Importing a save file **overwrites all your current settings**. Make sure you export a backup first if you want to keep your existing configuration.
+</Warning>
+
+<Tip>
+  If Cloudy moves to a new URL, export your save data before the old URL goes away, then visit the new URL and import the file to pick up right where you left off.
+</Tip>
+
+---
+
+<Note>
+  All settings are stored in your browser's `localStorage`. If you clear your browser's site data or cookies for the Cloudy domain, all settings will be reset to their defaults.
+</Note>

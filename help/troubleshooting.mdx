@@ -1,0 +1,103 @@
+---
+title: "Fix Common Cloudy Issues and Errors"
+sidebarTitle: "Troubleshooting"
+description: "Diagnose and resolve the most common Cloudy issues including Range Errors, blank pages, proxy failures, and sites that won't load."
+---
+
+If something isn't working in Cloudy, this page covers the most common issues and how to resolve them. Work through the accordion below that best matches your situation — most problems have a quick fix.
+
+<Accordion title="I'm getting a Range Error in GitHub Codespaces">
+  You did not click **Make public** when prompted after starting the server. Your forwarded port is set to private, which prevents the proxy from functioning correctly.
+
+  To fix this:
+
+  1. Open the **Ports** tab at the bottom of your Codespace.
+  2. Right-click the forwarded port and select **Port Visibility → Public**.
+  3. Restart the server if the error persists.
+</Accordion>
+
+<Accordion title="The site loads but the proxy isn't working / pages won't load">
+  Your proxy engine selection may be the cause. Try switching to **Scramjet** (the default engine) by going to **Settings → Choose your Proxy** and selecting Scramjet.
+
+  Also verify that your Codespace or server port is set to **Public** — a private port will cause proxy requests to silently fail.
+
+  <Note>
+    If you are using the **Dynamic** proxy engine, be aware that it does not work inside an About:Blank popup. Switch to Scramjet or Ultraviolet if you need About:Blank cloaking.
+  </Note>
+</Accordion>
+
+<Accordion title="About:Blank popup isn't opening">
+  First, confirm that About:Blank cloaking is enabled. Go to **Settings → About:Blank** and toggle the feature on, then click **Open Popup**.
+
+  If the popup still doesn't appear, your browser is likely blocking it. Allow popups for your Cloudy URL:
+
+  - **Chrome / Edge**: Click the blocked popup icon in the address bar → **Always allow popups from this site**.
+  - **Firefox**: Click **Options** in the blocked popup notification → **Allow pop-ups for this site**.
+  - **Safari**: Go to **Settings → Websites → Pop-up Windows** and set your Cloudy URL to Allow.
+</Accordion>
+
+<Accordion title="My settings were reset / lost">
+  Cloudy stores all settings in your browser. This data is wiped any time you clear your browser history, cookies, or site data.
+
+  To avoid losing your settings in the future, export them before clearing browser data:
+
+  1. Go to **Settings → Save Data Management → Export Save**.
+  2. Save the exported file somewhere safe.
+  3. To restore your settings on any Cloudy URL, go to **Settings → Save Data Management → Import Save** and load the file.
+</Accordion>
+
+<Accordion title="Cloudy deployed to Netlify / GitHub Pages / Cloudflare Pages isn't working">
+  Cloudy requires a **Node.js server** to run its proxy engines. Static hosting platforms — including Netlify, Cloudflare Pages, and GitHub Pages — do not support server-side Node.js processes, so Cloudy cannot function on them.
+
+  Use one of these alternatives instead:
+
+  - A **VPS or cloud server** (DigitalOcean, Render, Heroku, Railway, etc.)
+  - **GitHub Codespaces** for a free, browser-based cloud deployment
+</Accordion>
+
+<Accordion title="A specific website won't load through the proxy">
+  Different proxy engines handle different sites with varying success. Try switching engines in **Settings → Choose your Proxy**:
+
+  - **Scramjet** — the default engine and the most broadly compatible; try this first.
+  - **Ultraviolet** — the legacy engine; may work for sites that Scramjet doesn't support.
+  - **Dynamic** — an alternative mode for general browsing.
+
+  <Warning>
+    Some websites actively detect and block proxy traffic. If a site fails across all three engines, it is likely blocking proxies at the server level and cannot be accessed through Cloudy.
+  </Warning>
+</Accordion>
+
+<Accordion title="The port is showing as unavailable when starting locally">
+  Cloudy defaults to port **8080**. If that port is already in use on your machine, start the server on a different port by setting the `PORT` environment variable:
+
+  ```bash
+  PORT=3000 pnpm start
+  ```
+
+  Replace `3000` with any available port number. You can check which ports are in use with `lsof -i :<port>` (macOS/Linux) or `netstat -ano` (Windows).
+</Accordion>
+
+<Accordion title="I can't update — git pull fails">
+  If `git pull` is failing due to diverged histories or merge conflicts, run the following command to force the update:
+
+  ```bash
+  git pull --force --allow-unrelated-histories
+  ```
+
+  <Warning>
+    This command may overwrite any local customizations you have made to Cloudy's source files. Back up any changes you want to keep before running it.
+  </Warning>
+</Accordion>
+
+## Getting More Help
+
+If you've worked through the steps above and still can't resolve your issue, reach out through one of these channels.
+
+<CardGroup cols={2}>
+  <Card title="Discord Community" icon="discord" href="https://discord.gg/interstellar">
+    Get real-time help from the community
+  </Card>
+  <Card title="GitHub Issues" icon="github" href="https://github.com/memesdoesthings/CloudyVer2/issues">
+    Report bugs or track known issues
+  </Card>
+</CardGroup>

@@ -1,0 +1,118 @@
+---
+title: "Self-Host Cloudy: Deploy Your Own Web Proxy Instance"
+sidebarTitle: "Deployment"
+description: "Set up and run your own Cloudy instance using Node.js, pnpm, npm, or Bun — or use GitHub Codespaces for a quick cloud deployment."
+---
+
+Cloudy is designed to be self-hosted, giving you full control over your proxy instance. You can run it on any machine that supports Node.js — a home server, a VPS, or even a free cloud environment like GitHub Codespaces. Pick the deployment path that fits your setup and follow the steps below to get your instance online.
+
+<Warning>
+  Cloudy **cannot** be deployed to static hosting platforms such as Netlify, Cloudflare Pages, or GitHub Pages. It requires a live Node.js server process to handle proxy requests. Attempting a static deployment will result in a non-functional site.
+</Warning>
+
+## Server Deployment
+
+<Steps>
+  <Step title="Clone the repository">
+    Download the Cloudy source code to your server by running:
+
+    ```bash
+    git clone https://github.com/memesdoesthings/CloudyVer2
+    cd CloudyVer2
+    ```
+  </Step>
+  <Step title="Install dependencies">
+    Install the required packages using your preferred package manager:
+
+    <CodeGroup>
+      ```bash pnpm
+      pnpm i
+      ```
+      ```bash npm
+      npm i
+      ```
+      ```bash bun
+      bun i
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Start the server">
+    Launch Cloudy with your package manager of choice:
+
+    <CodeGroup>
+      ```bash pnpm
+      pnpm start
+      ```
+      ```bash npm
+      npm run start
+      ```
+      ```bash bun
+      bun start
+      ```
+    </CodeGroup>
+  </Step>
+  <Step title="Access your instance">
+    Once the server is running, open your browser and navigate to:
+
+    ```
+    http://localhost:8080
+    ```
+
+    Your Cloudy instance is live and ready to use.
+  </Step>
+</Steps>
+
+## GitHub Codespaces Deployment
+
+GitHub Codespaces lets you run a full Cloudy instance in the cloud for free, with no local setup required. This is the fastest way to get a shareable proxy URL up and running.
+
+<Steps>
+  <Step title="Create a GitHub account">
+    If you don't already have one, sign up for a free account at [github.com](https://github.com). Codespaces is included on all free plans with a monthly usage allowance.
+  </Step>
+  <Step title="Open the repository and create a Codespace">
+    Go to the [CloudyVer2 repository](https://github.com/memesdoesthings/CloudyVer2) on GitHub. Click the green **Code** button, switch to the **Codespaces** tab, and select **Create codespace on main**. GitHub will build and launch your cloud environment in a new browser tab.
+  </Step>
+  <Step title="Install dependencies and start the server">
+    In the integrated terminal that opens inside your Codespace, run:
+
+    ```bash
+    pnpm i && pnpm start
+    ```
+
+    Wait for the server to finish starting — you'll see a notification that a service is available on port 8080.
+  </Step>
+  <Step title="Make the port public">
+    A popup will appear in the bottom-right corner asking about port visibility. Click **Make public**. This step is **required** — without it, the proxy engine cannot load external resources and will throw errors.
+  </Step>
+  <Step title="Access from the Ports tab">
+    Click the **Ports** tab in the Codespace panel (next to Terminal). Find port 8080 and click the globe icon or the forwarded address to open your live Cloudy instance in a new tab.
+  </Step>
+</Steps>
+
+<Warning>
+  You **must** click **Make public** when prompted. If you skip this step or miss the popup, the proxy will fail to load pages and you will see a Range Error. You can change port visibility manually at any time from the **Ports** tab by right-clicking port 8080 and selecting **Port Visibility → Public**.
+</Warning>
+
+<Note>
+  To run Cloudy on a custom port, prefix the start command with your desired `PORT` value:
+
+  ```bash
+  PORT=8080 pnpm start
+  ```
+
+  Replace `8080` with any available port number you prefer.
+</Note>
+
+## Updating
+
+To pull the latest changes from the Cloudy repository, navigate to your project directory and run:
+
+```bash
+cd CloudyVer2
+git pull --force --allow-unrelated-histories
+```
+
+<Warning>
+  The `--force` flag may overwrite any local modifications you have made to the source files. Back up any custom changes before running this command.
+</Warning>

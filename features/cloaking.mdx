@@ -1,0 +1,89 @@
+---
+title: "Hide Cloudy with About:Blank and Tab Cloaking"
+sidebarTitle: "Cloaking"
+description: "Cloudy's cloaking tools let you disguise the site as a blank page or a known school tool by changing the tab title, favicon, and using About:Blank popups."
+---
+
+Cloaking features let you disguise Cloudy to avoid detection on restricted networks. Two systems work together to keep your activity inconspicuous: **About:Blank cloaking**, which hides Cloudy behind an `about:blank` URL in the browser's address bar, and **Tab Cloaking**, which changes the tab's visible title and favicon to look like a familiar school or work tool.
+
+## About:Blank Cloaking
+
+About:Blank cloaking wraps Cloudy inside a popup window whose URL is `about:blank`. Anyone glancing at your address bar sees nothing but `about:blank` — the actual Cloudy URL is never visible.
+
+**How it works:**
+
+- When triggered, Cloudy opens a new browser popup.
+- That popup displays an `<iframe>` that loads your full Cloudy session.
+- The original tab navigates away to a safe redirect URL.
+- The popup inherits the tab title and favicon set by your Tab Cloaker (see below).
+
+**To configure About:Blank cloaking:**
+
+1. Go to **Settings** (`/c`).
+2. Find the **About:Blank** card.
+3. Toggle the switch to enable it. When enabled, Cloudy will automatically open the about:blank popup on startup.
+4. Click **Open Popup** at any time to manually trigger the about:blank window without waiting for startup.
+
+<Warning>
+  About:Blank cloaking does not work in Firefox due to browser security restrictions. It also does not work with the **Dynamic** proxy engine — switch to Scramjet or Ultraviolet before enabling it.
+</Warning>
+
+## Tab Cloaking
+
+Tab Cloaking changes the visible browser tab title and favicon to impersonate a common school or work website. To anyone who glances at your open tabs, Cloudy looks like an ordinary classroom tool.
+
+**To set a tab cloak:**
+
+1. Go to **Settings** (`/c`).
+2. Find the **Tab Cloaker** card.
+3. Select a disguise from the dropdown list.
+4. Click **Save** to apply it immediately.
+5. To restore the default appearance, click **Reset Cloak**.
+
+**Available disguises include:**
+
+<CardGroup cols={3}>
+  <Card title="Google Suite" icon="google">
+    Google, Google Meet, Google Classroom, Google Drive, Google Docs, Google Slides, Gmail, Google Forms - Locked Mode
+  </Card>
+  <Card title="Learning Platforms" icon="book-open">
+    Clever, Canvas, CodeHS, Edpuzzle, Khan Academy, IXL, Schoology, i-Ready Math, i-Ready Reading, i-Ready Learning Games, Nearpod, NoRedInk Home, Newsela (Home, Binder, Assignments), DeltaMath, Kami, Big Ideas Math, Savvas Realize, PBS Learning Media
+  </Card>
+  <Card title="School Portals & Tools" icon="graduation-cap">
+    PowerSchool (Sign In, Grades, Attendance, Standards, Teacher Comments), Infinite Campus, StudentVUE, ClassLink Login, Naviance Student, SmartPass, LinkIt!, Quizlet Home, Minga
+  </Card>
+  <Card title="Reference Sites" icon="magnifying-glass">
+    Wikipedia, Britannica, Ducksters, World History Encyclopedia, World Book Online (Super Home, Student, Timelines), Dictionary.com, Thesaurus.com
+  </Card>
+  <Card title="GoGuardian Screens" icon="shield">
+    GoGuardian Admin Block, GoGuardian Teacher Block — mimics GoGuardian restriction pages to deter further inspection.
+  </Card>
+  <Card title="Default" icon="house">
+    Resets to the standard Google Classroom appearance (the built-in default).
+  </Card>
+</CardGroup>
+
+## Panic Key
+
+The Panic Key instantly redirects your browser to a safe URL the moment you press a specific key or key sequence. It's your emergency exit if someone approaches unexpectedly.
+
+**To configure the Panic Key:**
+
+1. Go to **Settings** (`/c`).
+2. Find the **Set Panic Key** card.
+3. In the **Panic Keys** field, enter one or more comma-separated keys that will trigger the redirect. For example, entering `A,B,C` means pressing A, then B, then C in sequence activates the panic.
+4. In the **Panic Link** field, enter the URL you want to be redirected to. The default is `https://classroom.google.com/`.
+5. Click **Save**.
+
+```text Example panic key configuration
+Panic Keys:  Escape
+Panic Link:  https://classroom.google.com/
+```
+
+<Tip>
+  Set your panic link to the same URL as your active Tab Cloak disguise for maximum effectiveness. For example, if you're cloaked as Google Classroom, set the panic link to `https://classroom.google.com/` so the redirect looks completely natural.
+</Tip>
+
+<Note>
+  All cloaking settings — including your chosen Tab Cloak, About:Blank toggle state, Panic Key, and Panic Link — are saved entirely in your browser's local storage. They are never sent to the server and will persist across sessions on the same browser, but will not carry over to a different device or browser profile unless you use the **Export Save** feature in Settings.
+</Note>
